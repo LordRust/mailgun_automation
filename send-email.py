@@ -10,17 +10,10 @@ sys.path.insert(0, env)
 from secret import trinning_mailgun_key
 
 key = trinning_mailgun_key
-print(key)
-exit
 
 domain = 'trinning.se'
 subject = 'Folkmusik med Trinning'
-# html_file = open("sommarmail.html","r")
-# html_template = html_file.read()
-# html_file.close()
-# text_file = open("sommarmail.txt","r")
-# text_template = text_file.read()
-# text_file.close()
+
 log = open("./log/log_" + '{:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()) + ".txt","w")
 
 def sendmail(recipient, first_name, subject, text, html):
