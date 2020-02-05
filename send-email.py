@@ -9,7 +9,6 @@ env=os.path.expanduser(os.path.expandvars('$HOME/.config/python-private'))
 sys.path.insert(0, env)
 from secret import trinning_mailgun_key
 
-#key = 'key-497c077c54c94ce917294788dcec5f10'
 key = trinning_mailgun_key
 print(key)
 exit
