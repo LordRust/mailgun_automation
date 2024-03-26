@@ -13,7 +13,7 @@ key = trinning_mailgun_key
 domain = 'trinning.se'
 
 request_url = 'https://api.mailgun.net/v3/{0}/events'.format(domain)
-request = requests.get(request_url, auth=('api', key), params={'limit': 5})
+request = requests.get(request_url, auth=('api', key), params={'limit': 300})
 
 print('Status: {0}'.format(request.status_code))
 print('Body:   {0}'.format(request.text))
