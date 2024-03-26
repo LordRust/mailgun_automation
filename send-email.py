@@ -37,11 +37,12 @@ with open("adresslista.csv", newline='') as f:
     for row in reader:
         # print(row[4])
         # print(row[5])
-        # print(">",row[6],"<")
+        # print(">",row[2],"<")
         # print(">",row[7],"<")
+        # print(">",row[9],"<")
         recipient = row[4].strip()
         first_name = row[2].strip()
-        if row[4] not in mottagare and row[5] != "x" and row[7].strip() == "":
+        if row[4] not in mottagare and row[5] != "x" and row[9].strip() == "":
             mottagare.append(row[4].strip())
             with open('./utskick/'+row[5]+'.html') as f:
                 html_template = f.read()
@@ -54,5 +55,7 @@ with open("adresslista.csv", newline='') as f:
             #print("Till: ", recipient, "\nFirst: ", first_name, "\nÄmne: ", subject, "\nText:\n", text, "\nhtml:\n", html, sep="")
         else:
             log.write("".join(["Inte Skickat\t", recipient, "\t", first_name, "\n\n"]))
+            #print('Inte skickat till ', recipient)
     #print(mottagare)
+
 log.close()
